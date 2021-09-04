@@ -2,14 +2,15 @@ package com.dataStructures.sort.choiceSort;
 
 public class ChoiceSort {
     public static void main(String[] args) {
+        ChoiceSort cs = new ChoiceSort();
         int[] arr = {20 ,10, 14, 1, 4, 2, 19, 3, 70};
-        int[] arrC = sort(arr);
+        int[] arrC = cs.sort(arr);
         for (int value: arrC) {
             System.out.println(value);
         }
     }
 
-    public static int[] sort(int[] arr) {
+    public int[] sort(int[] arr) {
         int[] arrCopy = arr.clone();
 
         for (int i = 0; i < arrCopy.length; i++) {

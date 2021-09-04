@@ -1,4 +1,4 @@
-package com.dataStructures.sort.bubbleSort;
+package com.dataStructures.sort.choiceSort;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -8,13 +8,13 @@ import java.util.Arrays;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;
 
-public class BubbleSortTest {
+public class ChoiceSortTest {
 
-    private static BubbleSort bs;
+    private static ChoiceSort cs;
 
     @BeforeClass
     public static void setClass() {
-        bs = new BubbleSort();
+        cs = new ChoiceSort();
     }
 
     @Test(timeout = 10_000)
@@ -23,7 +23,7 @@ public class BubbleSortTest {
         int[] dataClone = data.clone();
         Arrays.sort(data);
         assertThat(dataClone).isNotEqualTo(data);
-        assertArrayEquals(data, bs.sort(dataClone));
+        assertArrayEquals(data, cs.sort(dataClone));
     }
 
     @Test(timeout = 10_000)
@@ -32,7 +32,7 @@ public class BubbleSortTest {
         int[] dataClone = data.clone();
         Arrays.sort(data);
         assertThat(dataClone).isNotEqualTo(data);
-        assertArrayEquals(data, bs.sort(dataClone));
+        assertArrayEquals(data, cs.sort(dataClone));
     }
 
     @Test(timeout = 10_000)
@@ -41,7 +41,7 @@ public class BubbleSortTest {
         int[] dataClone = data.clone();
         Arrays.sort(data);
         assertThat(dataClone).isNotEqualTo(data);
-        assertArrayEquals(data, bs.sort(dataClone));
+        assertArrayEquals(data, cs.sort(dataClone));
     }
 
     @Test(timeout = 10_000)
@@ -50,43 +50,16 @@ public class BubbleSortTest {
         int[] dataClone = data.clone();
         Arrays.sort(data);
         assertThat(dataClone).isNotEqualTo(data);
-        assertArrayEquals(data, bs.sort(dataClone));
+        assertArrayEquals(data, cs.sort(dataClone));
     }
 
     @Test(timeout = 10_000)
-    public void sortComplex_10_elements() {
-        int[] data = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 10);
+    public void sort_100_000_elements() {
+        int[] data = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 100_000);
         int[] dataClone = data.clone();
         Arrays.sort(data);
         assertThat(dataClone).isNotEqualTo(data);
-        assertArrayEquals(data, bs.sortComplex(dataClone));
-    }
-
-    @Test(timeout = 10_000)
-    public void sortComplex_100_elements() {
-        int[] data = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 100);
-        int[] dataClone = data.clone();
-        Arrays.sort(data);
-        assertThat(dataClone).isNotEqualTo(data);
-        assertArrayEquals(data, bs.sortComplex(dataClone));
-    }
-
-    @Test(timeout = 10_000)
-    public void sortComplex_1000_elements() {
-        int[] data = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 1000);
-        int[] dataClone = data.clone();
-        Arrays.sort(data);
-        assertThat(dataClone).isNotEqualTo(data);
-        assertArrayEquals(data, bs.sortComplex(dataClone));
-    }
-
-    @Test(timeout = 10_000)
-    public void sortComplex_10_000_elements() {
-        int[] data = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 10000);
-        int[] dataClone = data.clone();
-        Arrays.sort(data);
-        assertThat(dataClone).isNotEqualTo(data);
-        assertArrayEquals(data, bs.sortComplex(dataClone));
+        assertArrayEquals(data, cs.sort(dataClone));
     }
 
     private int[] getArray(int min, int max, int length) {
