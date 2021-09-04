@@ -1,15 +1,9 @@
 package com.dataStructures.sort.countSort;
 
-import com.dataStructures.sort.choiceSort.ChoiceSort;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.Collections;
-
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.*;
 
 public class CountSortTest {
 
