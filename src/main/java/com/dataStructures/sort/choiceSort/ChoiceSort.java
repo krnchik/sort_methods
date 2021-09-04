@@ -4,28 +4,29 @@ public class ChoiceSort {
     public static void main(String[] args) {
         ChoiceSort cs = new ChoiceSort();
         int[] arr = {20 ,10, 14, 1, 4, 2, 19, 3, 70};
-        int[] arrC = cs.sort(arr);
-        for (int value: arrC) {
+
+        int[] arrSorted = cs.sort(arr);
+        for (int value: arrSorted) {
             System.out.println(value);
         }
     }
 
     public int[] sort(int[] arr) {
-        int[] arrCopy = arr.clone();
+        int[] arrClone = arr.clone();
 
-        for (int i = 0; i < arrCopy.length; i++) {
-            int min = arrCopy[i];
+        for (int i = 0; i < arrClone.length; i++) {
+            int min = arrClone[i];
             int index = i;
-            for (int j = i; j < arrCopy.length; j++){
-                if (arrCopy[j] < min){
-                    min = arrCopy[j];
+            for (int j = i; j < arrClone.length; j++){
+                if (arrClone[j] < min){
+                    min = arrClone[j];
                     index = j;
                 }
             }
-            int tmp = arrCopy[i];
-            arrCopy[i] = min;
-            arrCopy[index] = tmp;
+            int tmp = arrClone[i];
+            arrClone[i] = min;
+            arrClone[index] = tmp;
         }
-        return arrCopy;
+        return arrClone;
     }
 }

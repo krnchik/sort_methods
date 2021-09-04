@@ -16,7 +16,6 @@ public class BubbleSortTest {
     private static int[] data_100;
     private static int[] data_1000;
     private static int[] data_10_000;
-    private static int[] data_100_000;
 
     @BeforeClass
     public static void setClass() {
@@ -26,10 +25,9 @@ public class BubbleSortTest {
     @Before
     public void generateData() {
         data_10 = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 10);
-        data_100 = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 10);
-        data_1000 = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 10);
-        data_10_000 = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 10);
-        data_100_000 = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 10);
+        data_100 = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 100);
+        data_1000 = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 1000);
+        data_10_000 = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 10_000);
     }
 
     @Test(timeout = 10_000)
@@ -68,14 +66,6 @@ public class BubbleSortTest {
         assertArrayEquals(data, bs.sort(dataClone));
     }
 
-    @Test(timeout = 10_000)
-    public void sort_100_000_elements() {
-        int[] data = data_100_000;
-        int[] dataClone = data.clone();
-        Arrays.sort(data);
-        assertThat(dataClone).isNotEqualTo(data);
-        assertArrayEquals(data, bs.sort(dataClone));
-    }
 
     @Test(timeout = 10_000)
     public void sortComplex_10_elements() {
@@ -107,15 +97,6 @@ public class BubbleSortTest {
     @Test(timeout = 10_000)
     public void sortComplex_10_000_elements() {
         int[] data = data_10_000;
-        int[] dataClone = data.clone();
-        Arrays.sort(data);
-        assertThat(dataClone).isNotEqualTo(data);
-        assertArrayEquals(data, bs.sortComplex(dataClone));
-    }
-
-    @Test(timeout = 10_000)
-    public void sortComplex_100_000_elements() {
-        int[] data = data_100_000;
         int[] dataClone = data.clone();
         Arrays.sort(data);
         assertThat(dataClone).isNotEqualTo(data);

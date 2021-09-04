@@ -5,15 +5,15 @@ public class BubbleSort {
         BubbleSort bs = new BubbleSort();
         int[] arr = {10, 14, 1, 4, 2, 19, 3};
 
-        int[] arrC = bs.sort(arr);
-        for (int value: arrC) {
+        int[] arrSorted = bs.sort(arr);
+        for (int value: arrSorted) {
             System.out.println(value);
         }
 
         System.out.println();
 
-        arrC = bs.sortComplex(arr);
-        for (int value: arrC) {
+        arrSorted = bs.sortComplex(arr);
+        for (int value: arrSorted) {
             System.out.println(value);
         }
     }

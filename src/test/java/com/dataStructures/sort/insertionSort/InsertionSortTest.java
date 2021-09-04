@@ -25,10 +25,10 @@ public class InsertionSortTest {
     @Before
     public void generateData() {
         data_10 = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 10);
-        data_100 = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 10);
-        data_1000 = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 10);
-        data_10_000 = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 10);
-        data_100_000 = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 10);
+        data_100 = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 100);
+        data_1000 = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 1000);
+        data_10_000 = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 10_000);
+        data_100_000 = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 100_000);
         sortedData_10_000_000 = getSortedArray(10_000_000);
         reverseSortedData_100_000 = getReverseSortedArray(100_000);
     }

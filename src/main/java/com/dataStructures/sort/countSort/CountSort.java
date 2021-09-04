@@ -6,8 +6,11 @@ public class CountSort {
     public static void main(String[] args) {
         CountSort cs = new CountSort();
         int[] arr = {24, 34, 84, 45, 13, 45, 68, 69, 41, 13, 47, 89};
-        cs.sort(arr, 100);
-        System.out.println(Arrays.toString(arr));
+
+        int[] arrSorted = cs.sort(arr, 100);
+        for (int value: arrSorted) {
+            System.out.println(value);
+        }
     }
 
     public int[] sort(int[] arr, int maxValue) {
