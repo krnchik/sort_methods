@@ -31,3 +31,9 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
+################################
+##Other files
+################################
+src/main/java/com/dataStructures/courseUmedia/
+src/main/java/com/dataStructures/handh/
+src/main/java/com/dataStructures/tasks/
