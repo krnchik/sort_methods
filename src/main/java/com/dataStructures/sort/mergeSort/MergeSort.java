@@ -14,6 +14,10 @@ public class MergeSort {
     }
 
     public int[] sort(int[] arr) {
+        if (arr == null) {
+            throw new IllegalArgumentException("argument is null");
+        }
+
         int[] arrClone = arr.clone();
         int[] tmp;
         int[] currentSrc = arrClone;

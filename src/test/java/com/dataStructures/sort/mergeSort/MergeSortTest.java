@@ -27,6 +27,23 @@ public class MergeSortTest {
         data_10_000 = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 10_000);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void sort_null() {
+        ms.sort(null);
+    }
+
+    @Test()
+    public void sort_0_element() {
+        int[] data = new int[0];
+        assertThat(ms.sort(data)).isEqualTo(data);
+    }
+
+    @Test()
+    public void sort_1_element() {
+        int[] data = {1};
+        assertThat(ms.sort(data)).isEqualTo(data);
+    }
+
     @Test(timeout = 10_000)
     public void sort_10_elements() {
         int[] data = data_10;

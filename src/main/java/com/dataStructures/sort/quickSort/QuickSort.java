@@ -14,12 +14,16 @@ public class QuickSort {
     }
 
     public int[] sort(int[] arr) {
+        if (arr == null) {
+            throw new IllegalArgumentException("argument is null");
+        }
+
         int[] arrClone = arr.clone();
         quickSort(arrClone, 0, arrClone.length - 1);
         return arrClone;
     }
 
-    public void quickSort(int[] arr, int from, int to) {
+    private void quickSort(int[] arr, int from, int to) {
         if (from < to) {
             int divideIndex = partition(arr, from, to);
 //            printSortStep(arr, from, to, divideIndex);

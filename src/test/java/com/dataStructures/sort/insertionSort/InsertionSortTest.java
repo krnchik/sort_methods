@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class InsertionSortTest {
 
-    private static InsertionSort cs;
+    private static InsertionSort is;
     private static int[] data_10;
     private static int[] data_100;
     private static int[] data_1000;
@@ -19,7 +19,7 @@ public class InsertionSortTest {
 
     @BeforeClass
     public static void setClass() {
-        cs = new InsertionSort();
+        is = new InsertionSort();
     }
 
     @Before
@@ -33,10 +33,27 @@ public class InsertionSortTest {
         reverseSortedData_100_000 = getReverseSortedArray(100_000);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void sort_null() {
+        is.sort(null);
+    }
+
+    @Test()
+    public void sort_0_element() {
+        int[] data = new int[0];
+        assertThat(is.sort(data)).isEqualTo(data);
+    }
+
+    @Test()
+    public void sort_1_element() {
+        int[] data = {1};
+        assertThat(is.sort(data)).isEqualTo(data);
+    }
+
     @Test(timeout = 10_000)
     public void sort_10_elements() {
         int[] data = data_10;
-        int[] sortData = cs.sort(data);
+        int[] sortData = is.sort(data);
         assertThat(sortData).isNotEqualTo(data)
                 .isSorted();
     }
@@ -44,7 +61,7 @@ public class InsertionSortTest {
     @Test(timeout = 10_000)
     public void sort_100_elements() {
         int[] data = data_100;
-        int[] sortData = cs.sort(data);
+        int[] sortData = is.sort(data);
         assertThat(sortData).isNotEqualTo(data)
                 .isSorted();
     }
@@ -52,7 +69,7 @@ public class InsertionSortTest {
     @Test(timeout = 10_000)
     public void sort_1000_elements() {
         int[] data = data_1000;
-        int[] sortData = cs.sort(data);
+        int[] sortData = is.sort(data);
         assertThat(sortData).isNotEqualTo(data)
                 .isSorted();
     }
@@ -60,7 +77,7 @@ public class InsertionSortTest {
     @Test(timeout = 10_000)
     public void sort_10_000_elements() {
         int[] data = data_10_000;
-        int[] sortData = cs.sort(data);
+        int[] sortData = is.sort(data);
         assertThat(sortData).isNotEqualTo(data)
                 .isSorted();
     }
@@ -68,7 +85,7 @@ public class InsertionSortTest {
     @Test(timeout = 10_000)
     public void sort_100_000_elements() {
         int[] data = data_100_000;
-        int[] sortData = cs.sort(data);
+        int[] sortData = is.sort(data);
         assertThat(sortData).isNotEqualTo(data)
                 .isSorted();
     }
@@ -76,7 +93,7 @@ public class InsertionSortTest {
     @Test(timeout = 10_000)
     public void sort_10_000_000_elements_best_case() {
         int[] data = sortedData_10_000_000;
-        int[] sortData = cs.sort(data);
+        int[] sortData = is.sort(data);
         assertThat(sortData).isEqualTo(data)
                 .isSorted();
     }
@@ -84,7 +101,7 @@ public class InsertionSortTest {
     @Test(timeout = 10_000)
     public void sort_100_000_elements_worst_case() {
         int[] data = reverseSortedData_100_000;
-        int[] sortData = cs.sort(data);
+        int[] sortData = is.sort(data);
         assertThat(sortData).isNotEqualTo(data)
                 .isSorted();
     }

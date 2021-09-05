@@ -14,6 +14,41 @@ public class CountSortTest {
         cs = new CountSort();
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void sort_null() {
+        cs.sort(null, 10);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void sort_elements_more_maxValue() {
+        int[] data = {50, 30, 80, 99, 10};
+        cs.sort(data, 10);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void sort_negative_numbers() {
+        int[] data = {-50, -30, -80, -99, -10};
+        cs.sort(data, 10);
+    }
+
+    @Test
+    public void sort_extreme_values() {
+        int[] data = {0, 9, 10};
+        assertThat(cs.sort(data, 10)).isEqualTo(new int[]{0, 9, 10});
+    }
+
+    @Test()
+    public void sort_0_element() {
+        int[] data = new int[0];
+        assertThat(cs.sort(data, 10)).isEqualTo(data);
+    }
+
+    @Test()
+    public void sort_1_element() {
+        int[] data = {1};
+        assertThat(cs.sort(data, 10)).isEqualTo(data);
+    }
+
     @Test(timeout = 10_000)
     public void sort_10_elements_100_max_value() {
         int maxValue = 100;

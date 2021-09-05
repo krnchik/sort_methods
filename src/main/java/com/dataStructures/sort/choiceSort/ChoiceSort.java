@@ -12,8 +12,11 @@ public class ChoiceSort {
     }
 
     public int[] sort(int[] arr) {
-        int[] arrClone = arr.clone();
+        if (arr == null) {
+            throw new IllegalArgumentException("argument is null");
+        }
 
+        int[] arrClone = arr.clone();
         for (int i = 0; i < arrClone.length; i++) {
             int min = arrClone[i];
             int index = i;

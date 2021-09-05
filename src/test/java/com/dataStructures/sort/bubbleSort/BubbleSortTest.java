@@ -30,6 +30,23 @@ public class BubbleSortTest {
         data_10_000 = getArray(Integer.MIN_VALUE, Integer.MAX_VALUE, 10_000);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void sort_null() {
+        bs.sort(null);
+    }
+
+    @Test()
+    public void sort_0_element() {
+        int[] data = new int[0];
+        assertThat(bs.sort(data)).isEqualTo(data);
+    }
+
+    @Test()
+    public void sort_1_element() {
+        int[] data = {1};
+       assertThat(bs.sort(data)).isEqualTo(data);
+    }
+
     @Test(timeout = 10_000)
     public void sort_10_elements() {
         int[] data = data_10;
@@ -66,6 +83,22 @@ public class BubbleSortTest {
         assertArrayEquals(data, bs.sort(dataClone));
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void sortComplex_null() {
+        bs.sortComplex(null);
+    }
+
+    @Test()
+    public void sortComplex_0_element() {
+        int[] data = new int[0];
+        assertThat(bs.sortComplex(data)).isEqualTo(data);
+    }
+
+    @Test()
+    public void sortComplex_1_element() {
+        int[] data = {1};
+        assertThat(bs.sortComplex(data)).isEqualTo(data);
+    }
 
     @Test(timeout = 10_000)
     public void sortComplex_10_elements() {

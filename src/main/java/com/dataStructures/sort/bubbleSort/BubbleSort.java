@@ -19,6 +19,10 @@ public class BubbleSort {
     }
 
     public int[] sort(int[] arr) {
+        if (arr == null) {
+            throw new IllegalArgumentException("argument is null");
+        }
+
         int[] arrClone = arr.clone();
         for(int i = 0; i < arrClone.length; i++){
             for(int j = 0; j < arrClone.length; j++){
@@ -33,6 +37,10 @@ public class BubbleSort {
     }
 
     public int[] sortComplex(int[] arr) {
+        if (arr == null) {
+            throw new IllegalArgumentException("argument is null");
+        }
+
         int[] arrClone = arr.clone();
         boolean isSorted = false;
         while (!isSorted) {

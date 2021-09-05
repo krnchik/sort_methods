@@ -12,6 +12,10 @@ public class InsertionSort {
     }
 
     public int[] sort(int[] arr) {
+        if (arr == null) {
+            throw new IllegalArgumentException("argument is null");
+        }
+
         int[] arrClone = arr.clone();
         for (int i = 1; i < arrClone.length; i++) {
             int current = arrClone[i];
