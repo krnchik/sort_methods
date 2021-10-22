@@ -1,4 +1,4 @@
-package com.dataStructures.sort.insertionSort;
+package com.dataStructures.sort.insertion;
 
 public class InsertionSort {
     public static void main(String[] args) {

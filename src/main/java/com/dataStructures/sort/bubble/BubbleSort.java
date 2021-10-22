@@ -1,4 +1,4 @@
-package com.dataStructures.sort.bubbleSort;
+package com.dataStructures.sort.bubble;
 
 public class BubbleSort {
     public static void main(String[] args) {

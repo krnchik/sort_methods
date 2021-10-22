@@ -1,4 +1,4 @@
-package com.dataStructures.sort.choiceSort;
+package com.dataStructures.sort.choice;
 
 public class ChoiceSort {
     public static void main(String[] args) {

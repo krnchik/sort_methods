@@ -1,4 +1,4 @@
-package com.dataStructures.sort.quickSort;
+package com.dataStructures.sort.quick;
 
 import org.junit.Before;
 import org.junit.BeforeClass;

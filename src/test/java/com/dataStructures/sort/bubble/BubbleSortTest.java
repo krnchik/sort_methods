@@ -1,4 +1,4 @@
-package com.dataStructures.sort.bubbleSort;
+package com.dataStructures.sort.bubble;
 
 import org.junit.Before;
 import org.junit.BeforeClass;

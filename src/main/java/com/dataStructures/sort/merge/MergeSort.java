@@ -1,6 +1,4 @@
-package com.dataStructures.sort.mergeSort;
-
-import java.util.Arrays;
+package com.dataStructures.sort.merge;
 
 public class MergeSort {
     public static void main(String[] args) {

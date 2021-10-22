@@ -1,4 +1,4 @@
-package com.dataStructures.sort.quickSort;
+package com.dataStructures.sort.quick;
 
 import java.util.Arrays;
 

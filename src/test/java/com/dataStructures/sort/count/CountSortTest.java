@@ -1,4 +1,4 @@
-package com.dataStructures.sort.countSort;
+package com.dataStructures.sort.count;
 
 import org.junit.BeforeClass;
 import org.junit.Test;

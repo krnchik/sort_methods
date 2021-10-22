@@ -1,6 +1,4 @@
-package com.dataStructures.sort.countSort;
-
-import java.util.Arrays;
+package com.dataStructures.sort.count;
 
 public class CountSort {
     public static void main(String[] args) {
